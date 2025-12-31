@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && chmod +x ./bin/postbuild.sh && ./bin/postbuild.sh",
+    "dev": "concurrently \"next dev\" \"node src/index.js\"",
+    "build": "next build", 
+    "postbuild": "chmod +x ./bin/postbuild.sh && ./bin/postbuild.sh",
     "start": "node src/index.js",
     "lint": "next lint"
   },
@@ -23,5 +24,9 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
